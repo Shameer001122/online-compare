@@ -1,0 +1,549 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Header Styling - Transparent and Merged */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent; /* Make the header background transparent */
+    position: absolute; /* Overlay the hero section */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Ensure it stays on top */
+    padding: 20px 40px;
+    color: white;
+}
+
+/* Logo Styling */
+.logo img {
+    max-height: 70px; /* Adjust size as needed */
+    width: 350px;
+    display: block;
+}
+
+/* Navigation */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    white-space: nowrap;
+    margin:20px;
+    cursor: pointer;
+    color: #fff; /* Text color white */
+    transition: color 0.3s ease;
+}
+
+/* Remove underline from links */
+.nav ul li a {
+    color: inherit; /* Inherit white color from parent */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav ul li:hover {
+    color: #00ff99; /* Neon effect on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+   /* background-image: url('images/casino-bg.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: left;
+    padding: 50px 20px 50px; /* Adjust top padding to make room for the header */
+    position: relative;
+    min-height: 20vh; /* Full screen height */
+}
+
+/* Overlay for Better Readability */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text visibility */
+    z-index: 1;
+}
+
+/* Hero Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    line-height: 1.8;  /* General line-height for paragraph text */
+}
+
+/* Apply line-height to h1 and h2 specifically inside .page-description */
+.page-description h1, 
+.page-description h2 {
+    line-height: 1.5;  /* Adjust this value as needed */
+    margin: 0;  /* Remove any default margins applied to h1 and h2 */
+}
+
+/* Make sure no other styles override your h1 and h2 line-height */
+.page-description h1 {
+    font-size: 2rem;  /* You can adjust this value if needed */
+}
+
+.page-description h2 {
+    font-size: 1.6rem;  /* Adjust for h2 */
+}
+
+
+/* Strong Tag */
+strong {
+    font-weight: bold;
+}
+
+/* Responsive Styling for Header and Hero Section */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .page-description {
+        font-size: 1rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .page-description {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .nav ul li {
+        font-size: 1rem;
+    }
+}
+
+/* Section 2 */
+
+/* Section Container */
+.offer-section {
+    background: linear-gradient(to bottom, #111, #222);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Card Content */
+.offer-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #111;
+    border-radius: 10px;
+    padding: 20px;
+    /* RGB Glow Effect */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 
+                0 0 20px rgba(0, 255, 0, 0.8), 
+                0 0 30px rgba(0, 0, 255, 0.8), 
+                0 0 40px rgba(255, 0, 0, 0.8), 
+                0 0 50px rgba(0, 255, 0, 0.8), 
+                0 0 60px rgba(0, 0, 255, 0.8);
+    animation: glow 2s infinite alternate;
+}
+
+/* Keyframes for RGB glow animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 
+                    0 0 20px rgba(0, 255, 0, 0.8), 
+                    0 0 30px rgba(0, 0, 255, 0.8), 
+                    0 0 40px rgba(255, 0, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 
+                    0 0 30px rgba(0, 0, 255, 0.8), 
+                    0 0 40px rgba(255, 0, 0, 0.8), 
+                    0 0 50px rgba(0, 255, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 0, 255, 0.8), 
+                    0 0 40px rgba(255, 0, 0, 0.8), 
+                    0 0 50px rgba(0, 255, 0, 0.8), 
+                    0 0 60px rgba(0, 0, 255, 0.8);
+    }
+}
+
+
+/* Logo Section */
+.offer-logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Offer Details */
+.offer-details {
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+}
+
+.offer-details h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.offer-rating {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #FFD700;
+}
+
+/* Call to Action Button */
+.offer-cta {
+    display: flex;
+    align-items: center;
+}
+
+.claim-button {
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.claim-button:hover {
+    background-color: #218838;
+}
+
+/* Disclaimer */
+.offer-disclaimer {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    line-height: 1.5;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .offer-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .offer-logo img {
+        max-width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .offer-details h2 {
+        font-size: 1.3rem;
+    }
+
+    .claim-button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .offer-details h2 {
+        font-size: 1.1rem;
+    }
+
+    .offer-disclaimer {
+        font-size: 0.7rem;
+    }
+}
+
+/* Section 3 */
+
+/* Trust Section Styling */
+.trust-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.trust-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.trust-list {
+    list-style-type: none;
+}
+
+.trust-list li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 4px solid #00ff99; /* Neon Green Accent */
+    background-color: #111;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.trust-list li strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Hover Effect */
+.trust-list li:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.6);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .trust-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .trust-list li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .trust-list li {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Reset */
+
+footer {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    margin-top: -100px;
+}
+
+.responsible-gambling {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.content {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Header */
+.awareness {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.footer-logo {
+    width: 400px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+h1 span {
+    color: #00ff99;
+}
+
+/* Intro Text */
+.intro {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Support Section */
+.support-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.support-item {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.support-item h2 {
+    color: #00ff99;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.support-item p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.support-item a {
+    color: #00ff99;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.support-item a:hover {
+    text-decoration: underline;
+}
+
+/* Disclaimer */
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .awareness {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .support-section {
+        flex-direction: column;
+    }
+
+    .support-item {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 15px;
+    }
+
+    .footer-logo {
+        width: 40px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .intro,
+    .disclaimer {
+        font-size: 0.85rem;
+    }
+}
+
